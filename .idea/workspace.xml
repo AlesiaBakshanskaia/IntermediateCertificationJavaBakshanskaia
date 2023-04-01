@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbd7a8c5-65c6-4388-b183-8da8d929b619" name="Changes" comment="Создано меню, класс Toy, метод формирования основного списка игрушек">
+    <list default="true" id="fbd7a8c5-65c6-4388-b183-8da8d929b619" name="Changes" comment="Изменено меню, добвалены основные функции">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffleOfToys/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffleOfToys/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffleOfToys/Toy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffleOfToys/Toy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +81,19 @@
       <option name="project" value="LOCAL" />
       <updated>1680029538654</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Изменено меню, добвалены основные функции">
+      <created>1680359193276</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680359193276</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создано меню, класс Toy, метод формирования основного списка игрушек" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создано меню, класс Toy, метод формирования основного списка игрушек" />
+    <MESSAGE value="Изменено меню, добвалены основные функции" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменено меню, добвалены основные функции" />
   </component>
 </project>

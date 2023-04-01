@@ -12,7 +12,7 @@ public class Main {
     }
 
     private static void startWork() {
-        System.out.printf("Создайте список игрушек для розыгрыша%n");
+        System.out.printf("%nСоздайте список игрушек для розыгрыша%n");
         ArrayList<Toy> allToys = getListAllToys();
         printAll(allToys);
 
@@ -23,7 +23,7 @@ public class Main {
                     " 1. Добавить новую игрушку в список%n" +
                     " 2. Изменить название игрушки для розыгрыша%n" +
                     " 3. Изменить количество игрушек для розыгрыша конкретного вида игрушек%n" +
-                    " 4. Сформировать список разыгранных игрушек%n");
+                    " 4. Начать розыгрыш игрушек%n");
 
             String inputString = in.nextLine();
 
@@ -90,6 +90,32 @@ public class Main {
         }
     }
 
+    private static ArrayList<String> getListForRaffle(ArrayList<Toy> allToys) {
+        ArrayList<String> allToysForRaffle = new ArrayList<>();
+        for (Toy item : allToys) {
+            String toyName = item.getNameOfToy();
+            int toyAmount = item.getNumberOfPrizes();
+            for (int i = 0; i < toyAmount; i++) {
+                allToysForRaffle.add(toyName);
+            }
+        }
+        return allToysForRaffle;
+    }
+    private static void startRaffle(ArrayList<String> allToysForRaffle, ArrayList<String> listOfGifts) {
+        if (allToysForRaffle.size() == 0) {
+            System.out.println("Все игрушки разыграны! Перейдите к печати списка");
+        } else {
+            Random random = new Random();
+            String gift = allToysForRaffle.remove(random.nextInt(allToysForRaffle.size()));
+            listOfGifts.add(gift);
+            System.out.printf("В этом туре выпала %s%n", gift);
+            System.out.println("Список разыгранных игрушек на данный момент:");
+            for (String item : listOfGifts) {
+                System.out.println(item);
+            }
+        }
+    }
+
     private static void printListGifts(ArrayList<String> listOfGifts) {
         if (listOfGifts.size() == 0) {
             System.out.println("Вы не разыграли ни одной игрушки!");
@@ -113,77 +139,11 @@ public class Main {
         }
     }
 
-    private static ArrayList<String> getListForRaffle(ArrayList<Toy> allToys) {
-        ArrayList<String> allToysForRaffle = new ArrayList<>();
-        for (Toy item : allToys) {
-            String toyName = item.getNameOfToy();
-            int toyAmount = item.getNumberOfPrizes();
-            for (int i = 0; i < toyAmount; i++) {
-                allToysForRaffle.add(toyName);
-            }
-        }
-        return allToysForRaffle;
-    }
-
-    private static void changeAmountToys(ArrayList<Toy> allToys) {
-        System.out.printf("%nВведите название игрушки, количество которой хотите изменить: %n");
-        String toyName = nameFromUser();
-        int amountToy = amountFromUser();
-        int count = 0;
-        for (Toy item : allToys) {
-            if (item.getNameOfToy().equals(toyName)) {
-                item.setNumberOfPrizes(amountToy);
-                count++;
-            }
-        }
-        if (count == 0) {
-            System.out.printf("Такой игрушки не найдено%n");
-        }
-    }
-
-    private static void printAll(ArrayList<Toy> allToys) {
-        System.out.println("Список игрушек для розыгрыша: ");
-        for (Toy item : allToys) {
-            item.printToy();
-        }
-    }
-
-    private static void changeNameToy(ArrayList<Toy> allToys) {
-        System.out.printf("Введите название игрушки, которое хотите изменить: %n");
-        String toyName = nameFromUser();
-        System.out.printf("Введите новое название игрушки: %n");
-        String toyNewName = nameFromUser();
-        int count = 0;
-        for (Toy item : allToys) {
-            if (item.getNameOfToy().equals(toyName)) {
-                item.setNameOfToy(toyNewName);
-                count++;
-            }
-        }
-        if (count == 0) {
-            System.out.printf("Такой игрушки не найдено%n");
-        }
-    }
-    private static void startRaffle(ArrayList<String> allToysForRaffle, ArrayList<String> listOfGifts) {
-        if (allToysForRaffle.size() == 0) {
-            System.out.println("Все игрушки разыграны! Перейдите к печати списка");
-        } else {
-            Random random = new Random();
-            String gift = allToysForRaffle.remove(random.nextInt(allToysForRaffle.size()));
-            listOfGifts.add(gift);
-            System.out.printf("В этом туре выпала %s%n", gift);
-            System.out.println("Список разыгранных игрушек на данный момент:");
-            for (String item : listOfGifts) {
-                System.out.println(item);
-            }
-        }
-    }
-
     private static ArrayList<Toy> getListAllToys() {
         ArrayList<Toy> allToys = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         while (true) {
-            System.out.printf("%nСколько видов игрушек вы хотите разыграть? Введите цифру: %n");
+            System.out.printf("Сколько видов игрушек вы хотите разыграть? Введите цифру: %n");
             String numToysTypes = in.nextLine();
             try {
                 int numberToysTypes = Integer.parseInt(numToysTypes);
@@ -200,6 +160,13 @@ public class Main {
             }
         }
         return allToys;
+    }
+
+    private static void printAll(ArrayList<Toy> allToys) {
+        System.out.println("Список игрушек для розыгрыша: ");
+        for (Toy item : allToys) {
+            item.printToy();
+        }
     }
 
     private static void inputNewToy(ArrayList<Toy> allToys) {
@@ -229,6 +196,22 @@ public class Main {
         }
     }
 
+    private static void changeAmountToys(ArrayList<Toy> allToys) {
+        System.out.printf("%nВведите название игрушки, количество которой хотите изменить: %n");
+        String toyName = nameFromUser();
+        int count = 0;
+        for (Toy item : allToys) {
+            if (item.getNameOfToy().equalsIgnoreCase(toyName)) {
+                int amountToy = amountFromUser();
+                item.setNumberOfPrizes(amountToy);
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.out.printf("Такой игрушки не найдено%n");
+        }
+    }
+
 
     private static String nameFromUser() {
         Scanner in = new Scanner(System.in);
@@ -239,5 +222,22 @@ public class Main {
             name = in.nextLine();
         }
         return name;
+    }
+
+    private static void changeNameToy(ArrayList<Toy> allToys) {
+        System.out.printf("Введите название игрушки, которое хотите изменить: %n");
+        String toyName = nameFromUser();
+        int count = 0;
+        for (Toy item : allToys) {
+            if (item.getNameOfToy().equalsIgnoreCase(toyName)) {
+                System.out.printf("Введите новое название игрушки: %n");
+                String toyNewName = nameFromUser();
+                item.setNameOfToy(toyNewName);
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.out.printf("Такой игрушки не найдено%n");
+        }
     }
 }

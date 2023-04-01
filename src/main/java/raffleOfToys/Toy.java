@@ -1,7 +1,7 @@
 package raffleOfToys;
 
 public class Toy {
-    private int idToy;
+    final int idToy;
     private String nameOfToy;
     private int numberOfPrizes;
 
@@ -30,7 +30,7 @@ public class Toy {
     @Override
     public String toString() {
         return "Игрушка " + idToy +
-                " " + nameOfToy +
+                " " + nameOfToy + " " +
                 "количество  " + numberOfPrizes;
     }
     public void printToy(){
