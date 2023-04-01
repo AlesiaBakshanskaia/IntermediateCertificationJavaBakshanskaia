@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbd7a8c5-65c6-4388-b183-8da8d929b619" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffleOfToys/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffleOfToys/Toy.java" afterDir="false" />
+    <list default="true" id="fbd7a8c5-65c6-4388-b183-8da8d929b619" name="Changes" comment="Создано меню, класс Toy, метод формирования основного списка игрушек">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffleOfToys/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffleOfToys/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +40,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Владислав/IdeaProjects/IntermediateCertificationJavaBakshanskaia"
   }
 }]]></component>
   <component name="RunManager">
@@ -78,6 +73,18 @@
       <option name="presentableId" value="Default" />
       <updated>1680023908666</updated>
     </task>
+    <task id="LOCAL-00001" summary="Создано меню, класс Toy, метод формирования основного списка игрушек">
+      <created>1680029538654</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680029538654</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Создано меню, класс Toy, метод формирования основного списка игрушек" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создано меню, класс Toy, метод формирования основного списка игрушек" />
   </component>
 </project>

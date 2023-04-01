@@ -29,11 +29,9 @@ public class Toy {
 
     @Override
     public String toString() {
-        return "Toy{" +
-                "idToy=" + idToy +
-                ", nameOfToy='" + nameOfToy + '\'' +
-                ", numberOfPrizes=" + numberOfPrizes +
-                '}';
+        return "Игрушка " + idToy +
+                " " + nameOfToy +
+                "количество  " + numberOfPrizes;
     }
     public void printToy(){
         System.out.println(this);
