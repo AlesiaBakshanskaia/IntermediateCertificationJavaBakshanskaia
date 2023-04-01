@@ -130,7 +130,7 @@ public class Main {
     }
 
     private static void writeStringIntoFile(String str, boolean flag) {
-        try (FileWriter fw = new FileWriter("src/main/java/toysShop/file.txt", flag)) {
+        try (FileWriter fw = new FileWriter("src/main/java/raffleOfToys/ListOfGifts.txt", flag)) {
             fw.write(str);
             fw.append('\n');
             fw.flush();
